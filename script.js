@@ -1,6 +1,7 @@
 // YTG Landing Page JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
+    initStickyHeader();
     initScrollAnimations();
     initPortfolioAnimation();
     initWaitlistForm();
@@ -9,6 +10,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('YTG Landing Page initialized successfully');
 });
+
+// Initialize sticky header
+function initStickyHeader() {
+    const stickyHeader = document.getElementById('stickyHeader');
+    const heroSection = document.querySelector('.hero-section');
+    
+    if (!stickyHeader || !heroSection) return;
+    
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    stickyHeader.classList.remove('visible');
+                } else {
+                    stickyHeader.classList.add('visible');
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
+    
+    observer.observe(heroSection);
+}
 
 // Smooth scrolling for navigation
 function scrollToSection(sectionId) {
@@ -86,46 +110,74 @@ function initScrollAnimations() {
 // Portfolio animation in hero section
 function initPortfolioAnimation() {
     const portfolioUpload = document.getElementById('portfolioUpload');
-    const aiArrow = document.getElementById('aiArrow');
+    const aiProcessing = document.getElementById('aiProcessing');
     const portfolioRanked = document.getElementById('portfolioRanked');
+    const stepDots = document.querySelectorAll('.step-dot');
+    const workflowText = document.getElementById('workflowText');
 
-    if (!portfolioUpload || !aiArrow || !portfolioRanked) return;
+    if (!portfolioUpload || !aiProcessing || !portfolioRanked) return;
 
     // Initial state
+    aiProcessing.style.opacity = '0';
+    aiProcessing.style.transform = 'scale(0.9)';
     portfolioRanked.style.opacity = '0';
     portfolioRanked.style.transform = 'translateX(30px)';
 
     // Animation sequence
     function runAnimation() {
-        // Step 1: Highlight upload card
+        // Reset all states
+        stepDots.forEach(dot => dot.classList.remove('active'));
+        
+        // Step 1: Upload phase
+        stepDots[0].classList.add('active');
         portfolioUpload.style.transform = 'scale(1.05)';
         portfolioUpload.style.boxShadow = '0 20px 25px -5px rgb(37 99 235 / 0.2), 0 8px 10px -6px rgb(37 99 235 / 0.2)';
+        workflowText.textContent = 'Uploading your portfolio...';
 
         setTimeout(() => {
-            // Step 2: Animate AI arrow
-            aiArrow.style.transform = 'scale(1.2)';
-            aiArrow.style.animation = 'pulse 0.5s ease-in-out 3';
+            // Step 2: AI Processing phase
+            stepDots[0].classList.remove('active');
+            stepDots[1].classList.add('active');
+            
+            aiProcessing.style.opacity = '1';
+            aiProcessing.style.transform = 'scale(1)';
+            workflowText.textContent = 'AI is analyzing and ranking...';
+            
+            // Animate processing dots
+            const processingDots = aiProcessing.querySelectorAll('.processing-dots span');
+            processingDots.forEach((dot, index) => {
+                dot.style.animationDelay = `${index * 0.16}s`;
+            });
 
             setTimeout(() => {
-                // Step 3: Show ranked portfolio
+                // Step 3: Ranked Result phase
+                stepDots[1].classList.remove('active');
+                stepDots[2].classList.add('active');
+                
                 portfolioRanked.style.opacity = '1';
                 portfolioRanked.style.transform = 'translateX(0)';
-                portfolioRanked.style.transition = 'all 0.6s ease-out';
+                portfolioRanked.style.transition = 'all 0.8s ease-out';
+                workflowText.textContent = 'Portfolio ranked and ready!';
 
                 // Reset for next cycle
                 setTimeout(() => {
                     portfolioUpload.style.transform = 'scale(1)';
                     portfolioUpload.style.boxShadow = '';
-                    aiArrow.style.transform = 'scale(1)';
-                    aiArrow.style.animation = 'pulse 2s infinite';
-                }, 2000);
-            }, 1500);
-        }, 1000);
+                    aiProcessing.style.opacity = '0';
+                    aiProcessing.style.transform = 'scale(0.9)';
+                    portfolioRanked.style.opacity = '0';
+                    portfolioRanked.style.transform = 'translateX(30px)';
+                    stepDots.forEach(dot => dot.classList.remove('active'));
+                    stepDots[0].classList.add('active');
+                    workflowText.textContent = 'Upload → AI Analysis → Ranked Portfolio';
+                }, 3000);
+            }, 2000);
+        }, 1500);
     }
 
-    // Run animation on load and repeat every 8 seconds
-    setTimeout(runAnimation, 1000);
-    setInterval(runAnimation, 8000);
+    // Run animation on load and repeat every 12 seconds
+    setTimeout(runAnimation, 2000);
+    setInterval(runAnimation, 12000);
 
     // Add hover effects
     portfolioUpload.addEventListener('mouseenter', () => {
@@ -149,8 +201,40 @@ function initPortfolioAnimation() {
 function initWaitlistForm() {
     const form = document.getElementById('waitlistForm');
     const confirmationMessage = document.getElementById('confirmationMessage');
+    const employerFields = document.getElementById('employerFields');
+    const radioButtons = document.querySelectorAll('input[name="userType"]');
 
     if (!form || !confirmationMessage) return;
+    
+    // Handle user type selection
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'employer') {
+                employerFields.classList.remove('hidden');
+                const companyField = document.getElementById('company');
+                if (companyField) companyField.required = true;
+            } else {
+                employerFields.classList.add('hidden');
+                const companyField = document.getElementById('company');
+                if (companyField) {
+                    companyField.required = false;
+                    companyField.value = '';
+                }
+            }
+        });
+    });
+    
+    // Handle employer CTA clicks
+    const employerCTA = document.querySelector('[data-user-type="employer"]');
+    if (employerCTA) {
+        employerCTA.addEventListener('click', function() {
+            const employerRadio = document.getElementById('employer');
+            if (employerRadio) {
+                employerRadio.checked = true;
+                employerRadio.dispatchEvent(new Event('change'));
+            }
+        });
+    }
 
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -161,6 +245,7 @@ function initWaitlistForm() {
             name: formData.get('name'),
             email: formData.get('email'),
             userType: formData.get('userType'),
+            company: formData.get('company') || null,
             timestamp: new Date().toISOString(),
             source: 'landing_page'
         };
