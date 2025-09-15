@@ -1,26 +1,14 @@
 {
-  "version": 2,
-  "name": "ytg-landing-page",
-  "builds": [
+  "redirects": [
     {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/waitlist",
-      "dest": "/#waitlist",
-      "status": 301
+      "source": "/waitlist",
+      "destination": "/#waitlist",
+      "permanent": true
     },
     {
-      "src": "/employers",
-      "dest": "/#waitlist",
-      "status": 301
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/employers",
+      "destination": "/#waitlist",
+      "permanent": true
     }
   ],
   "headers": [
