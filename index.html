@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YTG - Your Talent Grid | Showcase Your Talent. Get Discovered Smarter.</title>
+    <meta name="description" content="A portfolio-first professional platform powered by AI. Stand out beyond your CV and connect with employers who value real work.">
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts - Inter for modern, clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-headline">Showcase Your Talent. Get Discovered Smarter.</h1>
+                    <h2 class="hero-subheading">A portfolio-first professional platform powered by AI. Stand out beyond your CV and connect with employers who value real work.</h2>
+                    
+                    <div class="hero-ctas">
+                        <button class="cta-primary" onclick="scrollToSection('waitlist')">
+                            <span>Join the Waitlist</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="cta-secondary" onclick="scrollToSection('waitlist-employer')">
+                            <span>For Employers</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="portfolio-animation">
+                        <div class="portfolio-upload" id="portfolioUpload">
+                            <div class="upload-card">
+                                <i class="fas fa-code"></i>
+                                <span>Portfolio Upload</span>
+                            </div>
+                        </div>
+                        <div class="ai-arrow" id="aiArrow">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="portfolio-ranked" id="portfolioRanked">
+                            <div class="ranked-card gold">
+                                <div class="badge gold-badge">
+                                    <i class="fas fa-medal"></i>
+                                    <span>Gold</span>
+                                </div>
+                                <div class="card-content">
+                                    <h4>John's Portfolio</h4>
+                                    <p>Full Stack Developer</p>
+                                    <div class="skills">
+                                        <span>React</span>
+                                        <span>Node.js</span>
+                                        <span>Python</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>Upload your work</h3>
+                    <p>Code, designs, media, or case studies.</p>
+                </div>
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI transforms & ranks it</h3>
+                    <p>Stand out with AI-verified portfolio scoring.</p>
+                </div>
+                <div class="step-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Get discovered</h3>
+                    <p>Employers filter by skill, project quality, and ranking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison-section">
+        <div class="container">
+            <h2 class="section-title">Why It's Different</h2>
+            <div class="comparison-cards">
+                <div class="comparison-card linkedin">
+                    <div class="card-header">
+                        <i class="fab fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-times text-red"></i> CV-heavy approach</li>
+                        <li><i class="fas fa-times text-red"></i> Keyword-based matching</li>
+                        <li><i class="fas fa-times text-red"></i> Noisy feed distractions</li>
+                        <li><i class="fas fa-times text-red"></i> Hard to showcase real work</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card ytg highlight">
+                    <div class="card-header">
+                        <i class="fas fa-grid-3x3"></i>
+                        <h3>YTG</h3>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check text-green"></i> Portfolio-first showcase</li>
+                        <li><i class="fas fa-check text-green"></i> AI-powered ranking</li>
+                        <li><i class="fas fa-check text-green"></i> Clean, focused interface</li>
+                        <li><i class="fas fa-check text-green"></i> Multi-format support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Early Users Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="avatar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Developer testimonial">
+                    </div>
+                    <blockquote>"As a developer, I can finally show code instead of bullet points."</blockquote>
+                    <cite>
+                        <strong>Alex Chen</strong>
+                        <span>Full Stack Developer</span>
+                    </cite>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face" alt="Recruiter testimonial">
+                    </div>
+                    <blockquote>"As a recruiter, I save hours by filtering ranked portfolios."</blockquote>
+                    <cite>
+                        <strong>Sarah Johnson</strong>
+                        <span>Tech Recruiter</span>
+                    </cite>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Designer testimonial">
+                    </div>
+                    <blockquote>"As a designer, my portfolio speaks louder than my CV."</blockquote>
+                    <cite>
+                        <strong>Marcus Rodriguez</strong>
+                        <span>UX Designer</span>
+                    </cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="waitlist-section">
+        <div class="container">
+            <div class="waitlist-content">
+                <h2>Be the first to experience the future of hiring.</h2>
+                <p>Join thousands of professionals and employers already on our waitlist.</p>
+                
+                <form id="waitlistForm" class="waitlist-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="userType" name="userType" required>
+                            <option value="">I am a...</option>
+                            <option value="job-seeker">Job Seeker</option>
+                            <option value="employer">Employer</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="cta-primary">
+                        <span>Join the Waitlist</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+                
+                <div id="confirmationMessage" class="confirmation-message hidden">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>You're in!</h3>
+                    <p>We'll notify you when early access opens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>YTG</h3>
+                    <p>Your Talent Grid</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 YTG. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <!-- Google Analytics (placeholder - replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+    </script>
+</body>
+</html>
