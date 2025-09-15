@@ -40,99 +40,26 @@
     </header>
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-headline">Showcase Your Talent. Get Discovered Smarter.</h1>
-                    <h2 class="hero-subheading">AI-powered portfolios that showcase your skills and rank your work for recruiters. Stand out beyond your CV and connect with employers who value real work.</h2>
-                    
-                    <div class="social-proof-mini">
-                        <div class="proof-item">
-                            <span class="proof-number">500+</span>
-                            <span class="proof-text">professionals joined</span>
-                        </div>
-                        <div class="proof-item">
-                            <span class="proof-number">50+</span>
-                            <span class="proof-text">companies waiting</span>
-                        </div>
-                    </div>
-                    
-                    <div class="hero-ctas">
-                        <button class="cta-primary cta-large" onclick="scrollToSection('waitlist')">
-                            <span>Join the Waitlist</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                        <button class="cta-secondary cta-employer" onclick="scrollToSection('waitlist')" data-user-type="employer">
-                            <i class="fas fa-building"></i>
-                            <span>For Employers</span>
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="hero-visual">
-                    <div class="portfolio-animation">
-                        <div class="step-indicator">
-                            <div class="step-dot active" data-step="1"></div>
-                            <div class="step-dot" data-step="2"></div>
-                            <div class="step-dot" data-step="3"></div>
-                        </div>
-                        
-                        <div class="portfolio-upload" id="portfolioUpload">
-                            <div class="upload-card">
-                                <div class="upload-icon">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                </div>
-                                <h4>Upload Your Work</h4>
-                                <p>Code, designs, projects</p>
-                                <div class="file-types">
-                                    <i class="fab fa-github"></i>
-                                    <i class="fab fa-figma"></i>
-                                    <i class="fas fa-file-code"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="ai-processing" id="aiProcessing">
-                            <div class="ai-animation">
-                                <i class="fas fa-brain"></i>
-                                <div class="processing-dots">
-                                    <span></span><span></span><span></span>
-                                </div>
-                            </div>
-                            <h4>AI Analysis</h4>
-                            <p>Ranking & polishing</p>
-                        </div>
-                        
-                        <div class="portfolio-ranked" id="portfolioRanked">
-                            <div class="ranked-card gold">
-                                <div class="badge gold-badge">
-                                    <i class="fas fa-trophy"></i>
-                                    <span>Gold Tier</span>
-                                </div>
-                                <div class="card-content">
-                                    <div class="profile-header">
-                                        <div class="avatar">JS</div>
-                                        <div class="profile-info">
-                                            <h4>John Smith</h4>
-                                            <p>Full Stack Developer</p>
-                                        </div>
-                                    </div>
-                                    <div class="skills">
-                                        <span class="skill-gold">React</span>
-                                        <span class="skill-silver">Node.js</span>
-                                        <span class="skill-bronze">Python</span>
-                                    </div>
-                                    <div class="ranking-score">
-                                        <span class="score-label">Portfolio Score</span>
-                                        <span class="score-value">94/100</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="workflow-caption">
-                        <span id="workflowText">Upload → AI Analysis → Ranked Portfolio</span>
+        <div class="hero-content">
+            <h1 class="hero-headline">Showcase Your Talent. Get Discovered Smarter.</h1>
+            <p class="hero-subheading">
+                A portfolio-first professional platform powered by AI. Stand out beyond your CV and connect with employers who value real work.
+            </p>
+            
+            <div class="hero-ctas">
+                <button class="cta-primary" onclick="scrollToSection('waitlist')">
+                    <span>Join the Waitlist</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="cta-secondary" onclick="scrollToSection('waitlist')" data-user-type="employer">
+                    <span>For Employers</span>
+                </button>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="portfolio-demo">
+                    <div class="demo-placeholder">
+                        Portfolio AI Demo
                     </div>
                 </div>
             </div>
@@ -140,7 +67,7 @@
     </section>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works-section">
+    <section id="how-it-works" class="how-it-works-section section">
         <div class="container">
             <h2 class="section-title">How It Works</h2>
             <div class="steps-container">
@@ -151,18 +78,12 @@
                     <h3>Upload your work</h3>
                     <p>Code, designs, media, or case studies.</p>
                 </div>
-                <div class="step-arrow">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
                 <div class="step">
                     <div class="step-icon">
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3>AI transforms & ranks it</h3>
                     <p>Stand out with AI-verified portfolio scoring.</p>
-                </div>
-                <div class="step-arrow">
-                    <i class="fas fa-arrow-right"></i>
                 </div>
                 <div class="step">
                     <div class="step-icon">
@@ -210,92 +131,47 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
+    <section id="testimonials" class="testimonials-section section-alt">
         <div class="container">
-            <div class="social-proof-header">
-                <div class="proof-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Professionals Joined</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Companies Waiting</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">95%</span>
-                        <span class="stat-label">Satisfaction Rate</span>
-                    </div>
-                </div>
-            </div>
-            
-            <h2 class="section-title">Loved by Professionals & Recruiters</h2>
+            <h2 class="section-title">What Our Early Users Say</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-card featured">
+                <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="avatar">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Alex Chen - Developer">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Alex Chen">
                         </div>
                         <div class="testimonial-info">
-                            <strong>Alex Chen</strong>
-                            <span>Senior Full Stack Developer</span>
-                            <span class="company">TechFlow Inc.</span>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <strong>Alex C.</strong>
+                            <span>Software Developer</span>
                         </div>
                     </div>
-                    <blockquote>"Finally, a platform where my actual code projects shine brighter than buzzwords. Got 3 interview requests in my first week!"</blockquote>
-                    <div class="testimonial-badge">
-                        <i class="fas fa-trophy"></i>
-                        <span>Gold Tier Portfolio</span>
-                    </div>
+                    <blockquote>"Finally a platform where my code speaks louder than my CV."</blockquote>
                 </div>
                 
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="avatar">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face" alt="Sarah Johnson - Recruiter">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face" alt="Sarah Johnson">
                         </div>
                         <div class="testimonial-info">
-                            <strong>Sarah Johnson</strong>
-                            <span>Senior Tech Recruiter</span>
-                            <span class="company">InnovateCorp</span>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <strong>Sarah J.</strong>
+                            <span>Tech Recruiter</span>
                         </div>
                     </div>
-                    <blockquote>"This AI ranking system is a game-changer. I can instantly spot top talent and spend time on quality matches, not resume screening."</blockquote>
+                    <blockquote>"I save hours by filtering ranked portfolios instead of reading resumes."</blockquote>
                 </div>
                 
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="avatar">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Marcus Rodriguez - Designer">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Marcus Rodriguez">
                         </div>
                         <div class="testimonial-info">
-                            <strong>Marcus Rodriguez</strong>
-                            <span>Lead UX Designer</span>
-                            <span class="company">DesignStudio Pro</span>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <strong>Marcus R.</strong>
+                            <span>UX Designer</span>
                         </div>
                     </div>
-                    <blockquote>"My design portfolio now tells a story. The AI ranking helps clients understand the depth of my work beyond pretty screenshots."</blockquote>
+                    <blockquote>"My portfolio speaks louder than my CV ever could."</blockquote>
                 </div>
             </div>
         </div>
